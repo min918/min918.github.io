@@ -42,21 +42,21 @@
 
 
       <span class="banner-fix"></span>
-
+      
+        <p><img src="https://octodex.github.com/images/yaktocat.png" alt="Image of Yaktocat"></p>
 
       <section id="main_content">
-        <canvas class="canvas" width="900" height="600"></canvas>
+        
       </section>
 
       <footer>
         <span class="ribbon-outer">
           <span class="ribbon-inner">
-            <p>Projects by <a href="https://github.com/min918">min918</a> can be found on <a href="https://github.com/min918">GitHub</a></p>
+            <p>Projects by <a href="https://github.com/min918">渣min</a> can be found on <a href="https://github.com/min918">GitHub</a></p>
           </span>
           <span class="left-tail"></span>
           <span class="right-tail"></span>
         </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
         <span class="octocat"></span>
       </footer>
 
@@ -65,39 +65,3 @@
     
   </body>
 </html>
-<script type="text/javascript">
-var c = document.getElementsByClassName('canvas')[0];
-    var cxt = c.getContext("2d"),
-            side = 900 / 5, x = 150 , y = 60;
-    cxt.fillStyle = '#FFDE00';
-    cxt.strokeStyle = '#FFDE00';
-    fillstar();
-    x = 150 , y = 60;
-    side = 900 / 15;
-    x = 900 / 3 , y = 600 / 20;
-    fillstar();
-    x = 900 * 0.4 , y = 600 * 0.15;
-    fillstar();
-    x = 900 * 0.4 , y = 600 * 0.3;
-    fillstar();
-    x = 900 / 3 , y = 600 * 0.4;
-    fillstar();
-    function fillstar(){
-        cxt.moveTo(x, y);
-        x -= side * Math.sin(Math.PI * 18 / 180);
-        y += side * Math.sin(Math.PI * 72 / 180);
-        cxt.lineTo(x, y);
-        x += side * Math.sin(Math.PI * 54 / 180);
-        y -= side * Math.sin(Math.PI * 36 / 180);
-        cxt.lineTo(x, y);
-        x -= side;
-        cxt.lineTo(x, y);
-        x += side * Math.sin(Math.PI * 54 / 180);
-        y += side * Math.sin(Math.PI * 36 / 180);
-        cxt.lineTo(x, y);
-        x -= side * Math.sin(Math.PI * 18 / 180);
-        y -= side * Math.sin(Math.PI * 72 / 180);
-        cxt.lineTo(x, y);
-    }
-    cxt.fill();
-    </script>
