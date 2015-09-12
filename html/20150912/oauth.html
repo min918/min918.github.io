@@ -60,7 +60,7 @@
         <div class="jumbotron">
             <div class="row">
                 <div class="col-xs-9">
-                    <div>
+                    <div class="well">
                         <h1>OAuth</h1>
 
                         <p class="lead">An open protocol to allow secure authorization in a simple and standard method
@@ -77,7 +77,16 @@
 
                         <p>2015-09-12</p>
                     </div>
+
+                    <div class="sidebar-module sidebar-module-inset">
+                        <div class="list-group">
+                            <a href="http://oauth.net/2/" class="list-group-item ">oauth</a>
+                            <a href="http://www.rfcreader.com/#rfc6749" class="list-group-item ">rfc6749</a>
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
         </div>
 
@@ -88,106 +97,152 @@
                 access to an HTTP service. </p>
         </div>
 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">1. 运行流程</h2>
+            </div>
+            <div class="panel-body">
 
-        <h2>1. 运行流程</h2>
+                <p>
+                    <img title="" alt="OAuth运行流程" src="../../images/oauth/oauth运行流程.png">
 
+                </p>
 
-        <p>
-            <img title="" alt="OAuth运行流程" src="../../images/oauth/oauth运行流程.png">
+                <div class="blockquote">
+                    <p class="lead">OAuth 2.0的运行流程如上图</p>
 
-        </p>
+                    <p> （A）用户打开客户端以后，客户端要求用户给予授权。</p>
 
-        <div class="blockquote">
-            <p class="lead">OAuth 2.0的运行流程如上图</p>
+                    <p> （B）用户同意给予客户端授权。</p>
 
-            <p> （A）用户打开客户端以后，客户端要求用户给予授权。</p>
+                    <p> （C）客户端使用上一步获得的授权，向认证服务器申请令牌。</p>
 
-            <p> （B）用户同意给予客户端授权。</p>
+                    <p> （D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。</p>
 
-            <p> （C）客户端使用上一步获得的授权，向认证服务器申请令牌。</p>
+                    <p> （E）客户端使用令牌，向资源服务器申请获取资源。</p>
 
-            <p> （D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。</p>
+                    <p> （F）资源服务器确认令牌无误，同意向客户端开放资源。</p>
 
-            <p> （E）客户端使用令牌，向资源服务器申请获取资源。</p>
+                </div>
 
-            <p> （F）资源服务器确认令牌无误，同意向客户端开放资源。</p>
-
-        </div>
-
-
-        <h2>2. 客户端的授权模式</h2>
-
-        <div class="blockquote">
-            <p class="lead">OAuth 2.0定义了四种授权方式。</p>
-
-            <ul>
-                <li>授权码模式（authorization code）</li>
-                <li>简化模式（implicit）</li>
-                <li>密码模式（resource owner password credentials）</li>
-                <li>客户端模式（client credentials）</li>
-            </ul>
-
-        </div>
-
-        <div class="row">
-            <div class="col-xs-1">
 
             </div>
-            <div class="col-xs-11">
-                <h3> 1）. 授权码模式</h3>
+        </div>
 
-                <p class="lead">授权码模式（authorization code）是功能最完整、流程最严密的授权模式。它的特点就是通过客户端的后台服务器，与"服务提供商"的认证服务器进行互动。</p>
 
-                <p>
-                    <img title="" alt="OAuth运行流程" src="../../images/oauth/授权码模式.png">
-
-                </p>
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h2 class="panel-title">2. 客户端的授权模式</h2>
+            </div>
+            <div class="panel-body">
 
                 <div class="blockquote">
+                    <p class="lead">OAuth 2.0定义了四种授权方式。</p>
 
+                    <ul>
+                        <li>授权码模式（authorization code）</li>
+                        <li>简化模式（implicit）</li>
+                        <li>密码模式（resource owner password credentials）</li>
+                        <li>客户端模式（client credentials）</li>
+                    </ul>
 
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-1">
 
-                <h3> 2）. 简化模式</h3>
+                    </div>
+                    <div class="col-xs-11">
 
-                <p class="lead">简化模式（implicit grant
-                    type）不通过第三方应用程序的服务器，直接在浏览器中向认证服务器申请令牌，跳过了"授权码"这个步骤，因此得名。所有步骤在浏览器中完成，令牌对访问者是可见的，且客户端不需要认证。</p>
+                        <h3> 1）. 授权码模式</h3>
 
-                <p>
-                    <img title="" alt="OAuth运行流程" src="../../images/oauth/简化模式.png">
+                        <p class="lead">授权码模式（authorization
+                            code）是功能最完整、流程最严密的授权模式。它的特点就是通过客户端的后台服务器，与"服务提供商"的认证服务器进行互动。</p>
 
-                </p>
+                        <p>
+                            <img title="" alt="OAuth运行流程" src="../../images/oauth/授权码模式.png">
 
-                <div class="blockquote">
+                        </p>
 
+                        <div class="blockquote">
+                            <p>（A）用户访问客户端，后者将前者导向认证服务器。</p>
 
-                </div>
+                            <p>（B）用户选择是否给予客户端授权。</p>
 
-                <h3> 3）. 密码模式</h3>
+                            <p>（C）假设用户给予授权，认证服务器将用户导向客户端事先指定的"重定向URI"（redirection URI），同时附上一个授权码。</p>
 
-                <p class="lead">密码模式（Resource Owner Password Credentials Grant）中，用户向客户端提供自己的用户名和密码。客户端使用这些信息，向"服务商提供商"索要授权。</p>
+                            <p>（D）客户端收到授权码，附上早先的"重定向URI"，向认证服务器申请令牌。这一步是在客户端的后台的服务器上完成的，对用户不可见。</p>
 
-                <p>
-                    <img title="" alt="OAuth运行流程" src="../../images/oauth/密码模式.png">
-
-                </p>
-
-                <div class="blockquote">
+                            <p>（E）认证服务器核对了授权码和重定向URI，确认无误后，向客户端发送访问令牌（access token）和更新令牌（refresh token）。</p>
+                        </div>
 
 
-                </div>
+                        <h3> 2）. 简化模式</h3>
 
-                <h3> 4）. 客户端模式</h3>
+                        <p class="lead">简化模式（implicit grant
+                            type）不通过第三方应用程序的服务器，直接在浏览器中向认证服务器申请令牌，跳过了"授权码"这个步骤，因此得名。所有步骤在浏览器中完成，令牌对访问者是可见的，且客户端不需要认证。</p>
 
-                <p class="lead">客户端模式（Client Credentials Grant）指客户端以自己的名义，而不是以用户的名义，向"服务提供商"进行认证。</p>
+                        <p>
+                            <img title="" alt="OAuth运行流程" src="../../images/oauth/简化模式.png">
 
-                <p>
-                    <img title="" alt="OAuth运行流程" src="../../images/oauth/客户端模式.png">
+                        </p>
 
-                </p>
+                        <div class="blockquote">
 
-                <div class="blockquote">
+                            <p>（A）客户端将用户导向认证服务器。</p>
+
+                            <p>（B）用户决定是否给于客户端授权。</p>
+
+                            <p>（C）假设用户给予授权，认证服务器将用户导向客户端指定的"重定向URI"，并在URI的Hash部分包含了访问令牌。</p>
+
+                            <p>（D）浏览器向资源服务器发出请求，其中不包括上一步收到的Hash值。</p>
+
+                            <p>（E）资源服务器返回一个网页，其中包含的代码可以获取Hash值中的令牌。</p>
+
+                            <p>（F）浏览器执行上一步获得的脚本，提取出令牌。</p>
+
+                            <p>（G）浏览器将令牌发给客户端。</p>
+
+                        </div>
+
+                        <h3> 3）. 密码模式</h3>
+
+                        <p class="lead">密码模式（Resource Owner Password Credentials
+                            Grant）中，用户向客户端提供自己的用户名和密码。客户端使用这些信息，向"服务商提供商"索要授权。</p>
+
+                        <p>
+                            <img title="" alt="OAuth运行流程" src="../../images/oauth/密码模式.png">
+
+                        </p>
+
+                        <div class="blockquote">
+
+                            <p>（A）用户向客户端提供用户名和密码。</p>
+
+                            <p>（B）客户端将用户名和密码发给认证服务器，向后者请求令牌。</p>
+
+                            <p>（C）认证服务器确认无误后，向客户端提供访问令牌。</p>
+
+                        </div>
+
+                        <h3> 4）. 客户端模式</h3>
+
+                        <p class="lead">客户端模式（Client Credentials Grant）指客户端以自己的名义，而不是以用户的名义，向"服务提供商"进行认证。</p>
+
+                        <p>
+                            <img title="" alt="OAuth运行流程" src="../../images/oauth/客户端模式.png">
+
+                        </p>
+
+                        <div class="blockquote">
+
+                            <p>（A）客户端向认证服务器进行身份认证，并要求一个访问令牌。</p>
+
+                            <p>（B）认证服务器确认无误后，向客户端提供访问令牌。</p>
+
+                        </div>
+
+                    </div>
 
 
                 </div>
@@ -196,7 +251,6 @@
 
 
         </div>
-
     </div>
 
 
@@ -205,7 +259,6 @@
         <p class="text-muted">min</p>
     </footer>
 
-</div>
 </div>
 
 
